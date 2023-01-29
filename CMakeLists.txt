@@ -4,6 +4,9 @@ CMAKE_MINIMUM_REQUIRED ( VERSION 3.10 )
 
 PROJECT ( DarkMark C CXX )
 
+IF (NOT DEFINED ${OpenCV_DIR}) # Allow using hardcoded value if OpenCV not found
+	SET("OpenCV_DIR" "C:/Users/olokos/Documents/Projekty/OPENCV-COMPILE/opencv-4.x/build") # Replace this with Your own self-compiled OpenCV output dir
+ENDIF ()
 IF ( NOT CMAKE_BUILD_TYPE )
 	SET ( CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel." FORCE )
 ENDIF ()
